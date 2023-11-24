@@ -14,7 +14,7 @@ def test_registration_form():
     browser.element('.react-datepicker__month-select').click().type('December').click()
     browser.element('.react-datepicker__year-select').click().type('1987').click()
     browser.element('.react-datepicker__day--026').click()
-    browser.element('#subjectsInput').should(be.blank).type('inform').click()
+    browser.element("#subjectsInput").set_value("Chemistry").press_enter()
     browser.element('[for="hobbies-checkbox-1"]').click()
     browser.element('#uploadPicture').send_keys(os.path.abspath('pictures/rubiks_cube.jpg'))
     browser.element('#currentAddress').type('Moscow, Park street, 88')
@@ -28,7 +28,7 @@ def test_registration_form():
         'Female' and
         '6575755765' and
         '26 december, 1987' and
-        'inform' and
+        'Chemistry' and
         'Sports' and
         'rubiks_cube.jpeg' and
         'moscow, park street, 88' and
