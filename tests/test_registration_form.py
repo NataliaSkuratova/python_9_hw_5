@@ -21,8 +21,8 @@ def test_registration_form():
     browser.element('#react-select-3-input').type('Haryana').press_enter()
     browser.element('#react-select-4-input').type('Karnal').press_enter()
     browser.element('#submit').press_enter()
-    browser.element('#example-modal-sizes-title-lg').should(have.exact_text('Thanks for submitting the form'))
-    browser.element('.table-responsive').should(have.text(
+    browser.element('.modal-header').should(have.text('Thanks for submitting the form'))
+    browser.element('.table').should(have.text(
         'Natalia Skuratova' and
         'aabc@gmail.com' and
         'Female' and
@@ -30,7 +30,7 @@ def test_registration_form():
         '26 december, 1987' and
         'Chemistry' and
         'Sports' and
-        'rubiks_cube.jpeg' and
+        'rubiks_cube.jpg' and
         'moscow, park street, 88' and
         'Hayana' and
         'Karnal'
