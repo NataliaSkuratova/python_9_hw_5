@@ -22,17 +22,9 @@ def test_registration_form():
     browser.element('#react-select-4-input').type('Karnal').press_enter()
     browser.element('#submit').press_enter()
     browser.element('.modal-header').should(have.text('Thanks for submitting the form'))
-    browser.element('.table').should(have.text(
-        'Natalia Skuratova' and
-        'aabc@gmail.com' and
-        'Female' and
-        '6575755765' and
-        '26 december, 1987' and
-        'Chemistry' and
-        'Sports' and
-        'rubiks_cube.jpg' and
-        'moscow, park street, 88' and
-        'Hayana' and
-        'Karnal'
-    ))
+    browser.all("tbody tr td:last-child").should(have.exact_texts(
+        'Natalia Skuratova', 'aabc@gmail.com', 'Female',
+        '6575755765', '26 December,1987', 'Chemistry',
+        'Sports', 'rubiks_cube.jpg',
+        'Moscow, Park street, 88', 'Haryana Karnal'))
     browser.element('#closeLargeModal').press_enter()
